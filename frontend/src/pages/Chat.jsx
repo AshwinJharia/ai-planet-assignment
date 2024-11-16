@@ -25,7 +25,7 @@ function Chat() {
 
     const fetchDocument = async () => {
         try {
-            const response = await axios.get(`http://localhost:8000/documents/${documentId}`);
+            const response = await axios.get(`/api/documents/${documentId}`);
             setDocument(response.data);
             setAnswers(response.data.answers);
         } catch (error) {
@@ -38,7 +38,7 @@ function Chat() {
         if (!question.trim()) return;
 
         try {
-            const response = await axios.post('http://localhost:8000/ask-question/', {
+            const response = await axios.post('/api/ask-question/', {
                 question,
                 document_id: parseInt(documentId),
             });

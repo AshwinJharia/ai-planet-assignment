@@ -22,7 +22,7 @@ function Home() {
 
     const fetchDocuments = async () => {
         try {
-            const response = await axios.get('http://localhost:8000/documents/');
+            const response = await axios.get('/api/documents/');
             setDocuments(response.data);
         } catch (error) {
             console.error('Error fetching documents:', error);
@@ -37,7 +37,7 @@ function Home() {
         formData.append('file', file);
 
         try {
-            const response = await axios.post('http://localhost:8000/upload-pdf/', formData);
+            const response = await axios.post('/api/upload-pdf/', formData);
             fetchDocuments();
         } catch (error) {
             console.error('Error uploading file:', error);
