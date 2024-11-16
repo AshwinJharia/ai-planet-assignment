@@ -4,7 +4,7 @@ import { loadEnv } from 'vite';
 
 const env = loadEnv(process.env.NODE_ENV, process.cwd(), 'VITE_');
 
-// console.log('VITE_BACKEND:', env.VITE_BACKEND)  // Log for debugging
+console.log('VITE_BACKEND:', env.VITE_BACKEND)  // Log for debugging
 
 export default defineConfig({
   server: {
